@@ -27,41 +27,22 @@ catch(PDOException $e)
             <div class="row">
                 <div class="col-sm-8 blog-main">
         <?php
-
-            // pripremamo upit
             $sql = "SELECT * 
             FROM posts 
             ORDER BY created_at DESC LIMIT 3";
-            
             $statement = $connection->prepare($sql);
-
-            // izvrsavamo upit
             $statement->execute();
-
-            // zelimo da se rezultat vrati kao asocijativni niz.
-            // ukoliko izostavimo ovu liniju, vratice nam se obican, numerisan niz
             $statement->setFetchMode(PDO::FETCH_ASSOC);
-
-            // punimo promenjivu sa rezultatom upita
             $posts = $statement->fetchAll();
-
-            // koristite var_dump kada god treba da proverite sadrzaj neke promenjive
         ?>
         <?php
                 foreach ($posts as $post) {
             ?>
-
                     <div class="blog-post">
-                        
                         <h2 class="blog-post-title"><a href="single-post.php?post_id=<?php echo($post['id']) ?>" class ="a-title"><?php echo($post['title']) ?></a></h2>
-
-                            <!-- zameniti  datum i ime sa pravim imenom i datumom blog post-a iz baze -->
                             <p class="blog-post-meta">
                                 <?php echo($post['created_at']) ?>. by <a href='#'><?php echo($post['author']) ?></a> </p>
-                        
-
                         <div>
-                            <!-- zameniti ovaj privremeni (testni) text sa pravim sadrzajem blog post-a iz baze -->
                             <p><?php echo($post['body']) ?></p>
                         </div>
                 </div>
