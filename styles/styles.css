@@ -1,0 +1,31 @@
+body{
+    font-size: 14px;
+}
+.nav-link{
+    background-color: #b34848;
+}
+.blog-masthead{
+    background-color: #b34848;
+}
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6{
+    color: #b34848;
+}
+.a-title{
+    color: #b34848;
+    text-decoration-color: #b34848;
+}
+.a-title:hover{
+    color: #b34848;
+    text-decoration-color: #b34848;
+}

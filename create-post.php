@@ -1,4 +1,6 @@
+<html>
 <?php 
 include('header.php');
 include('sidebar.php');
 include('footer.php');?>
+</html>
