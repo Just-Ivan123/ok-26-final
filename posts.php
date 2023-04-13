@@ -1,17 +1,6 @@
 <?php
-$servername = "127.0.0.1";
-$username = "root";
-$password = "1234";
-$dbname = "blog";
-
-try {
-    $connection = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-    $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}
-catch(PDOException $e)
-{
-    echo $e->getMessage();
-}
+session_start();
+include('db.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +11,10 @@ catch(PDOException $e)
     <title>Document</title>
 </head>
 <body>
-<?php include('header.php');?>
+<?php if(empty($_SESSION['id'])){
+ include('header.php');}
+ else{
+ include('header2.php');}?>
 <main role="main" class="container">
             <div class="row">
                 <div class="col-sm-8 blog-main">
@@ -41,7 +33,7 @@ catch(PDOException $e)
                     <div class="blog-post">
                         <h2 class="blog-post-title"><a href="single-post.php?post_id=<?php echo($post['id']) ?>" class ="a-title"><?php echo($post['title']) ?></a></h2>
                             <p class="blog-post-meta">
-                                <?php echo($post['created_at']) ?>. by <a href='#'><?php echo($post['author']) ?></a> </p>
+                                <?php echo($post['created_at']) ?>. by <a href='#'><?php echo($post['username']) ?></a> </p>
                         <div>
                             <p><?php echo($post['body']) ?></p>
                         </div>

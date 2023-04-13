@@ -29,8 +29,8 @@
         <div class="container">
           <nav class="nav">
             <a class="nav-link active" href="posts.php">Home</a>
-            <a class="nav-link" href="create-profile.php">Create profile</a>
-            <a class="nav-link" href="sign-in.php">Sign in</a>
+            <a class="nav-link" href="create-post.php">Create post</a>
+            <a class="nav-link" href="sign-out.php">Sign out</a>
           </nav>
         </div>
       </div>

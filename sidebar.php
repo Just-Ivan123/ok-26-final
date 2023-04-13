@@ -16,6 +16,7 @@
           <div class="sidebar-module sidebar-module-inset">
             <h4>Latest posts</h4>
             <?php
+            include('db.php');
             $sql = "SELECT id,title 
             FROM posts 
             ORDER BY created_at DESC LIMIT 5";
