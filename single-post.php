@@ -52,7 +52,21 @@ catch(PDOException $e)
             <?php
                 }
             ?>
+            <input type=submit name="Ad" value="Hide Comments" class ='btn' id ='hider'>
+            <div id = 'comments'>
             <?php include("comments.php");?>
+            </div>
+            <script>
+            document.getElementById('hider').onclick = function() {
+                if(document.getElementById('comments').hidden === false){
+                document.getElementById('comments').hidden = true;
+                document.getElementById('hider').value = 'Show comments';
+                }else{
+                    document.getElementById('comments').hidden = false;
+                document.getElementById('hider').value = 'Hide comments';
+                }
+            }
+            </script>
                 </div>
             <?php include('sidebar.php');?>
         </div>
